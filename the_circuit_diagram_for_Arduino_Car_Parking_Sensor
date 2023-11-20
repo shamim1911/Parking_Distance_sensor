@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "author": "https://github.com/shamim1911",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 10.2, "left": 28.2, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "ssd1306",
+      "top": 243.14,
+      "left": 173.23,
+      "attrs": { "i2c-address": "0x3c" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -129.55,
+      "left": 267.64,
+      "attrs": { "distance": "61" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic2",
+      "top": -129.51,
+      "left": 79.06,
+      "attrs": { "distance": "43" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic3",
+      "top": -128.15,
+      "left": -116.37,
+      "attrs": { "distance": "58" }
+    }
+  ],
+  "connections": [
+    [ "uno:A5", "ssd1306:SCL", "gold", [ "v19.1", "h-53.3" ] ],
+    [ "uno:A4", "ssd1306:SDA", "limegreen", [ "v28.7", "h-34.2" ] ],
+    [ "uno:5V", "ssd1306:VCC", "red", [ "v19.1", "h32.6" ] ],
+    [ "uno:GND.3", "ssd1306:GND", "black", [ "v28.7", "h4" ] ],
+    [ "ultrasonic1:ECHO", "uno:2", "yellow", [ "v34.24", "h-90.55", "v0.36" ] ],
+    [ "ultrasonic1:TRIG", "uno:3", "cyan", [ "v25.17", "h-92.82", "v4.35" ] ],
+    [ "ultrasonic2:ECHO", "uno:4", "yellow", [ "v19.32", "h79.53", "v28.66", "h-0.36" ] ],
+    [ "ultrasonic2:TRIG", "uno:5", "cyan", [ "v27.3", "h2.53" ] ],
+    [ "ultrasonic3:ECHO", "uno:6", "yellow", [ "v16.62", "h171.88", "v15.77", "h84.65" ] ],
+    [ "ultrasonic3:TRIG", "uno:7", "cyan", [ "v33.87", "h0.19", "v5.33", "h253.4" ] ],
+    [ "ultrasonic3:VCC", "uno:5V", "red", [ "v252.45", "h231.66" ] ],
+    [ "ultrasonic2:VCC", "uno:5V", "red", [ "v11.25", "h-199.21", "v247.49", "h234.89" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "red", [ "v14.58", "h-393.27", "v248.03", "h12.59" ] ],
+    [ "ultrasonic3:GND", "uno:GND.1", "black", [ "v88.74", "h166.92" ] ],
+    [ "ultrasonic2:GND", "uno:GND.1", "black", [ "v87.91", "h-31.25" ] ],
+    [ "ultrasonic1:GND", "uno:GND.1", "black", [ "v83.57", "h0.83", "v3.83", "h-219.02" ] ]
+  ]
+}
